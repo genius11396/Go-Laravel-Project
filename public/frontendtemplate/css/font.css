@@ -1,0 +1,29 @@
+@font-face
+{
+	font-family: 'Bold';
+	src: url('fonts/Baloo2-Bold.ttf');
+}
+
+@font-face
+{
+	font-family: 'ExtraBold';
+	src: url('fonts/Baloo2-ExtraBold.ttf');
+}
+
+@font-face
+{
+	font-family: 'Medium';
+	src: url('fonts/Baloo2-Medium.ttf');
+}
+
+@font-face
+{
+	font-family: 'Regular';
+	src: url('fonts/Baloo2-Regular.ttf');
+}
+
+@font-face
+{
+	font-family: 'SemiBold';
+	src: url('fonts/Baloo2-SemiBold.ttf');
+}
