@@ -29,3 +29,4 @@ Route::get('driverorder',function(){
 Route::get('policy',function(){
 	return view('frontend.driver.policy');
 });
+

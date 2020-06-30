@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	$('.hideclass').hide();
 	$('#showmore').click(function(){
@@ -6,3 +7,4 @@ $(document).ready(function(){
 
 	})
 })
+
