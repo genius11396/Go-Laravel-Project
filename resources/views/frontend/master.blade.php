@@ -18,6 +18,7 @@
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
+    <script type="text/javascript" src="{{asset('frontendtemplate/js/select2.min.js')}}"></script>
 </head>
 
 <body>
@@ -50,6 +51,8 @@
 
 
     @yield('content')
+
+    @yield('script')
 
     <div class="pt-2" style="background-color: #202e2f; text-align: center;">
         <div class="container-fluid" >

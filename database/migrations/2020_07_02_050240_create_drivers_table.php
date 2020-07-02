@@ -18,8 +18,6 @@ class CreateDriversTable extends Migration
             $table->string('name');
             $table->text('photo');
             $table->integer('phone');
-            $table->text('licensephoto');
-            $table->text('carphoto');
             $table->text('cartype');
             $table->text('carno');
             $table->text('cardetail');
@@ -29,6 +27,7 @@ class CreateDriversTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->unsignedBigInteger('city_id');
+            $table->integer('status');
             $table->timestamps();
             $table->softDeletes();
         });
