@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\backendend;
+namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-class BackendController extends Controller
+use App\Division;
+use App\City;
+class CityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,9 @@ class BackendController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $cities = City::all();
+        return view('backend.cities.index',compact('cities'));
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +26,9 @@ class BackendController extends Controller
      */
     public function create()
     {
-        //
+         $divisions=Division::all();
+        return view('backend.cities.create',compact('divisions'));
+
     }
 
     /**
@@ -35,7 +39,13 @@ class BackendController extends Controller
      */
     public function store(Request $request)
     {
-        //
+             //Data insert
+        $city=new City;
+        $city->name=$request->name;
+        $city->division_id=$request->division;
+        $city->save();
+        //return
+        return redirect()->route('city.index');
     }
 
     /**
@@ -57,7 +67,10 @@ class BackendController extends Controller
      */
     public function edit($id)
     {
-        //
+    $city=City::find($id);
+   
+     $divisions=Division::all();
+    return view('backend.cities.edit',compact('city','divisions'));
     }
 
     /**
@@ -69,7 +82,19 @@ class BackendController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+                   //validation
+        $request->validate([
+        'name'=>'required|min:2|max:191'   
+        ]);
+     
+        //Data insert
+        $city= City::find($id);
+        $city->name=$request->name;
+        $city->division_id=$request->division;
+
+        $city->save();
+        //return
+        return redirect()->route('city.index');
     }
 
     /**
@@ -80,6 +105,8 @@ class BackendController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $city=City::find($id);
+        $city->delete();
+        return redirect()->route('city.index');
     }
 }
