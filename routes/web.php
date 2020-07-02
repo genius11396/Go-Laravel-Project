@@ -26,6 +26,9 @@ Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail'
 Route::get('driverorder',function(){
 	return view('frontend.driver.index_order');
 });
+Route::get('driver-register',function(){
+	return view('frontend.driver.driver_register');
+});
 Route::get('policy',function(){
 	return view('frontend.driver.policy');
 });
