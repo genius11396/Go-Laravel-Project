@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
-	public function resultpage($value='')
+	public function resultpage()
     {
     	return view('frontend.customer.search_result');
     }

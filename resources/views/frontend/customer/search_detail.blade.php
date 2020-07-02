@@ -16,7 +16,7 @@
 						<li><b>Car Name:</b> Suzuki Ertiga</li>
 						<li><b>Car Type:</b>  MPV-type vehicle</li>
 						<li><b>Car No:</b>  1H/3850</li>
-						<li><b>Seatsing Capacity:</b>  7 (with driver)</li>
+						<li><b>Seating Capacity:</b>  7 (with driver)</li>
 						<li><b>Wheelbase:</b>  2740 mm</li>
 						<li><b>Turning Radius:</b>  5.2 m</li>	
 					</ul>
@@ -48,19 +48,24 @@
 			</div>
 		</div>
 
-		<div id="myModal" class="modal fade" role="dialog">
+		<div id="myModal" class="modal fade" role="dialog" >
 			<div class="modal-dialog">
 
-				<div class="modal-content">
+				<div class="modal-content modalbg">
 					<div class="modal-header">
-						<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-						<h4 class="modal-title">Order Accept</h4>
+						<h3 class="modal-title text-center">Order Accept</h3>
+						<!-- <button type="button" class="close text-white" data-dismiss="modal">&times;</button> -->
 					</div>
 					<div class="modal-body">
 						<p>We will reply to you soon.</p>
+						<img src="{{asset('frontendtemplate/images/reply.svg')}}" class="img-fluid" width="30">
+						<img src="{{asset('frontendtemplate/images/reply.svg')}}" class="img-fluid" width="30">
+						<img src="{{asset('frontendtemplate/images/reply.svg')}}" class="img-fluid" width="30">
+						<img src="{{asset('frontendtemplate/images/reply.svg')}}" class="img-fluid" width="30">
+						<img src="{{asset('frontendtemplate/images/reply.svg')}}" class="img-fluid" width="30">
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 

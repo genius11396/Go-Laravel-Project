@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','frontend\CustomerController@index')->name('home');
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail');
+
 Route::get('driverorder',function(){
 	return view('frontend.driver.index_order');
 });

@@ -8,3 +8,19 @@ $(document).ready(function(){
 	})
 })
 
+ $(document).ready(function () {                 
+        function carloop() {
+		    $('#car').css({left:130});
+		    $('#car').animate({
+		        left: '+=125',
+		    }, {
+		        duration: 3000, 
+		        easing: 'swing', 
+		        complete: carloop
+		    });
+		}
+		carloop();
+});
+
+
+

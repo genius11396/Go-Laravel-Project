@@ -21,12 +21,18 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-dark" style="height: 80px; background-color: #202e2f;">
         <div class="container-fluid">
+
             <div class="d-flex flex-grow-1">
             <a href="#">
                 <img src="{{asset('frontendtemplate/images/go_logo.png')}}" height="100">
-                <img src="{{asset('frontendtemplate/images/car.svg')}}" height="100">
+
+                <span id="car" style="position: absolute;">
+                    <img src="{{asset('frontendtemplate/images/car.svg')}}" height="100">
+                </span>
+
             </a>
             </div>
             <a href="" class="p-2">
@@ -42,13 +48,14 @@
         </div>
     </nav>
 
+
     @yield('content')
 
-    <div class="mt-5" style="background-color: #202e2f; text-align: center;">
+    <div class="pt-2" style="background-color: #202e2f; text-align: center;">
         <div class="container-fluid" >
             <div class="row">
                 <div class="col-12 ">
-                    <p class="text-white p-3">All right reserved</p>
+                    <p class="text-white pb-3">All right reserved</p>
                 </div>
             </div>  
         </div>

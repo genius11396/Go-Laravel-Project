@@ -1,7 +1,6 @@
 #icon
 {
 	color: #007588;
-	background-color: #fff;
 	font-size: 30px;
 }
 
@@ -12,9 +11,24 @@
 
 }
 
-#bg
+.modalbg
 {
-	
+	background-color: #007588;
+	color: #fff;
 }
 
+.modal-header
+{
+	border-bottom: 0 none;
+}
 
+.modal-footer
+{
+	border-top: 0 none;
+}
+
+#img
+{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
