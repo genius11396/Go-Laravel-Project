@@ -8,16 +8,8 @@
             <div class="card col-lg-6 col-md-10 col-sm-10">
         <div class="card-block">
     <form action="">
+      
     <div class="row">
-          <div class="form-group col-lg-6 col-md-6">
-       <div class="p-3">
-            <label for="exampleFormControlSelect1">Option </label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>Taxi</option>
-          <option>Trip</option>
-        </select>
-       </div>
-      </div>
         <div class="form-group col-lg-6 col-md-6">
        <div class="p-3">
             <label for="exampleFormControlSelect1">No. of Passengers </label>

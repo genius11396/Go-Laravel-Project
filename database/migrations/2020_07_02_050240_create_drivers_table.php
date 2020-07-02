@@ -25,7 +25,7 @@ class CreateDriversTable extends Migration
             $table->text('cardetail');
             $table->text('hometown');
             $table->text('travelablecity');
-            $table->interger('noofseats');
+            $table->integer('noofseats');
             $table->string('email')->unique();
             $table->string('password');
             $table->unsignedBigInteger('city_id');
