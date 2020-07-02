@@ -37,12 +37,7 @@
     <input type="file" class="">
    </div>
   </div>
-      <div class="form-group col-lg-6 col-md-6">
-   <div class="p-3">
-        <label for="exampleFormControlSelect1">No. of Passengers </label>
-    <input type="number" class="form-control">
-   </div>
-  </div>
+      
      <div class="form-group col-lg-6 col-md-6">
    <div class="p-3">
         <label for="exampleFormControlSelect1">Car type</label>

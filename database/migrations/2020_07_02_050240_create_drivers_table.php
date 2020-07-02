@@ -16,7 +16,15 @@ class CreateDriversTable extends Migration
         Schema::create('drivers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('photo');
             $table->integer('phone');
+            $table->text('licensephoto');
+            $table->text('carphoto');
+            $table->text('cartype');
+            $table->text('carno');
+            $table->text('hometown');
+            $table->text('travelablecity');
+            $table->interger('noofseats');
             $table->string('email')->unique();
             $table->string('password');
             $table->unsignedBigInteger('city_id');
