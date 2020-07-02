@@ -4,7 +4,8 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Driver;
+use App\Driver;
+use App\Division;
 
 class DriverController extends Controller
 {
@@ -25,7 +26,8 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        $divisions=Division::all();
+        return view('frontend.driver.driver_register',compact('divisions'));
     }
 
     /**

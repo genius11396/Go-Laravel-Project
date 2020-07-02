@@ -79,13 +79,15 @@
         <label for="exampleFormControlSelect1">Travelable City </label>
 
         <div class="custom-control custom-switch">
-          <input type="checkbox" class="custom-control-input" id="customSwitch1" name="allcity" checked="checked" onclick="division">
-          <label class="custom-control-label" for="customSwitch1">All City</label>
+          <input type="checkbox" class="custom-control-input" id="allcity" name="allcity" checked="checked">
+          <label class="custom-control-label" for="allcity">All City</label>
         </div>
 
         
-          <select>
-            <option>Yangon</option>
+          <select class="form-control" name="division"id="division">
+              @foreach($divisions as $division)
+                <option value="{{$division->id}}">{{$division->name}}</option>
+              @endforeach
           </select>
    </div>
   </div>
@@ -164,6 +166,22 @@
 @section('script')
     <script type="text/javascript">
       $(document).ready(function(){
+          $("#division").hide();
+          $("#allcity").click(function(){
+            if ($(this).is(":checked"))
+              {
+                  $("#division").hide();
+              }
+              else
+              {
+                  $("#division").show();
+              }
+         })
+
+          $("#division").change(function(){
+            var id=$(this).val();
+            console.log(id);
+          })
 
       })
     </script>
