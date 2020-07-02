@@ -30,6 +30,7 @@ class CreateDriversTable extends Migration
             $table->string('password');
             $table->unsignedBigInteger('city_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
