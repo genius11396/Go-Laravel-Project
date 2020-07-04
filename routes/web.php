@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
+| 
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('index','backend\BackendController@index')->name('index');
 
 
-Route::get('/','frontend\CustomerController@index')->name('home');
+
+
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail');
 
@@ -34,6 +35,15 @@ Route::get('policy',function(){
 });
 
 // NPS
+
+Route::get('/','frontend\CustomerController@index')->name('home');
+Route::post('/fetch','frontend\CustomerController@fetch')->name('customer.fetch');
+Route::post('/dropfetch','frontend\CustomerController@dropfetch')->name('customer.dropfetch');
 Route::resource('city','backend\CityController');
+
 Route::get('dashboard','backend\BackendController@index')->name('dashboard');
 Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
+
+
+Route::get('dashboard','backend\BackendController@index')->name('dashboard');
+
