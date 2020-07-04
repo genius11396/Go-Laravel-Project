@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/font.css')}}">
 
+    <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/select2.min.css')}}">
+
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Driver;
 use App\Division;
+use App\City;
 
 class DriverController extends Controller
 {
@@ -26,8 +27,11 @@ class DriverController extends Controller
      */
     public function create()
     {
+
         $divisions=Division::all();
+        // dd($divisions);
         return view('frontend.driver.driver_register',compact('divisions'));
+        
     }
 
     /**
@@ -38,36 +42,57 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['photo' => 'sometimes|mimes:jpeg,bmp,png','name'=>'required|min:5|max:191']);
+       // dd($driver->states);
+        
+        // $request->validate([
+        //     'name'=>'required|min:5|max:191',
+        //     'photo[]' => 'sometimes|mimes:jpeg,bmp,png',
+        //     'email' => 'required|min:5|max:191',
+        //     'password' => 'required|min:5|max:191'
+        // ]);
 
-
-        $photoName = time().'.'.$request->photo->extension();
-        $request->photo->move(public_path('driverimages'),$photoName);
-        $filepath_photo= 'driverimages/'.$photoName;
-
-        $licensephoto = time().'.'.$request->licensephoto->extension();
-        $request->photo->move(public_path('licenceimages'),$licensephoto);
-        $licensephoto= 'licenceimages/'.$licensephoto;
-
-        $carphoto = time().'.'.$request->carphoto->extension();
-        $request->photo->move(public_path('carimages'),$carphoto);
-        $carphoto= 'carimages/'.$carphoto;
+        $images= $request->file('photo');
+        if ($images) {
+            foreach ($images as $image) {
+                $imagesName=uniqid().time().'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('images/driver'),$imagesName);
+                $filepath='images/driver'.$imagesName;
+                $image_array[]=$filepath;
+            }
+        }
 
         $driver=new Driver;
         $driver->name=$request->name;
-        $driver->photo=$filepath_photo;
+        $driver->photo=json_encode($image_array);
         $driver->phone=$request->phone;
-        $driver->type=$request->type;
-        $driver->price=$request->price;
-        $driver->hometown=$request->hometown;
-        $driver->allcity=$request->allcity;
+        $driver->cartype=$request->type;
         $driver->carno=$request->carno;
-        $driver->seat=$request->seat;
-        $driver->email=$request->email;
-        $driver->password=$request->password;
-
+        $driver->cardetail=$request->details;
+        $driver->price=$request->price;
+        $driver->city_id=$request->hometown;
+        $driver->travelablecity=$request->division;
+       // dd($request->division);
+        if ( $driver->travelablecity==null) {
+            $driver->status=0;
+        }
+        else
+        {
+            $driver->status=1;
+            
+        }
+         $driver->noofseats=$request->seat;
         $driver->save();
-        return redirect()->route('.index');
+
+        $itemString=$request->states;
+
+             $driver->cities()->attach($itemString);
+            
+        
+      
+       
+      //  dd($driver);
+
+        return view('frontend.driver.index_order');
     }
 
     /**
@@ -112,6 +137,16 @@ class DriverController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+    }
+
+    public function citybydivision(Request $request)
+    {
+        
+        // dd(request('id'));   
+        $id=request('id');
+        $cities=City::where('division_id',$id)->get();
+        // dd($cities);
+        return $cities;
     }
 }

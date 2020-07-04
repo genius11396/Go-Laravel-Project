@@ -14,7 +14,7 @@ class City extends Model
     protected $fillable=['name','division_id'];
 
      public function division()
-    {
+    { 
     	return $this->belongsTo('App\Division');
     }
 

@@ -7,11 +7,11 @@
 @section('content')
 
 <div class="mb-3">
-	<span class="h3 text-gray-800">Subcategory</span><a href="{{ route('subcategories.create') }}"class="btn btn-primary float-right">Add New</a>
+	<span class="h3 text-gray-800">Cities</span><a href="{{ route('city.create') }}"class="btn btn-primary float-right">Add New</a>
 </div>
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary"> Subcategory lists</h6>
+		<h6 class="m-0 font-weight-bold text-primary"> City lists</h6>
 	</div>
  <div class="card-body">
   <div class="table-responsive">
@@ -20,24 +20,22 @@
         <tr>
          <th>No.</th>
          <th>Name</th>
-         <th>Category</th>
+         <th>Division</th>
          <th>Action</th>
-
        </tr>
      </thead>
      <tfoot>
       <tr>
         <th>No.</th>
         <th>Name</th>
-        <th>Category</th>
+        <th>Division</th>
         <th>Action</th>
-
       </tr>
     </tfoot>
     <tbody>
 
      @php $i=1;@endphp
-     @foreach($subcategories as $row)
+     @foreach($cities as $row)
      <tr>
        <th>{{$i++}}</th>
        <th>
@@ -45,10 +43,10 @@
       </th>
       <th>
         
-       {{$row->category_id}}</th>
+       {{$row->division->name}}</th>
        <th>
-        <a href="{{route('subcategories.edit',$row->id)}}" class="btn btn-warning" >Edit</a>
-        <form style="display: inline;" method="post" action="{{route('subcategories.destroy',$row->id)}}"  onsubmit="return comfirm('Are you comfirm')">
+        <a href="{{route('city.edit',$row->id)}}" class="btn btn-warning" >Edit</a>
+        <form style="display: inline;" method="post" action="{{route('city.destroy',$row->id)}}"  onsubmit="return comfirm('Are you comfirm')">
            @csrf
            @method('DELETE')
            <input type="submit" name="btnsubmit" value="Delete" class="btn btn-danger">

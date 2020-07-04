@@ -21,6 +21,7 @@ class CreateDriversTable extends Migration
             $table->text('cartype');
             $table->text('carno');
             $table->text('cardetail');
+            $table->integer('price');
             $table->text('hometown');
             $table->text('travelablecity');
             $table->integer('noofseats');

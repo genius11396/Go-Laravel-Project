@@ -2,15 +2,15 @@
 @section('content')
 
 <div class="mb-3">
-	<span class="h3 text-gray-800">Create Subcategory</span><a href="{{ route('subcategories.index') }}"class="btn btn-primary float-right">Lists</a>
+	<span class="h3 text-gray-800">Create City</span><a href="{{ route('city.index') }}"class="btn btn-primary float-right">Lists</a>
 </div>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 	<div class="card-header py-3">
-		<h6 class="m-0 font-weight-bold text-primary"> Subcategory Form</h6>
+		<h6 class="m-0 font-weight-bold text-primary"> City Form</h6>
 	</div>
 	<div class="card-body">
-		@if($errors->any())
+	{{--	@if($errors->any())
 		<div class="alert alert-danger">
 			<ul>
 				@foreach ($errors->all() as $error)
@@ -18,14 +18,14 @@
 				@endforeach
 			</ul>
 		</div>
-		@endif
-		<form action="{{route('subcategories.store')}}" method="POST" enctype="multipart/form-data">
+		@endif   --}}
+		<form action="{{route('city.store')}}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="form-group row">
-				<label for="categoryName" class="col-sm-2 col-form-label">Category</label>
+				<label for="division" class="col-sm-2 col-form-label">Division</label>
 				<div class="col-sm-10">
-					<select class="form-control" name="category" id="">
-     						@foreach($categories as $row)
+					<select class="form-control" name="division" id="division">
+     						@foreach($divisions as $row)
 							<option value="{{$row->id}}">{{$row->name}}</option>
 					@endforeach
 					</select>
@@ -33,12 +33,13 @@
 				</div>
 			</div>
 			<div class="form-group row">
-				<label for="categoryName" class="col-sm-2 col-form-label">Name</label>
+				<label for="city" class="col-sm-2 col-form-label">Name</label>
 				<div class="col-sm-10">
-					<input type="text" name="name" class="form-control" id="categoryName" placeholder="Enter Subcategory Name">
+					<input type="text" name="name" class="form-control" id="city" placeholder="Enter City Name">
 				</div>
 			</div>
 
+			
 			
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
@@ -51,4 +52,10 @@
 	</div>
 </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+	
+</script>
 @endsection
