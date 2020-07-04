@@ -15,13 +15,14 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/font.css')}}">
 
-    <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
+    <script type="text/javascript"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
 </head>
 
 <body>
-
+    
     <nav class="navbar navbar-dark" style="height: 80px; background-color: #202e2f;">
         <div class="container-fluid">
 
@@ -50,6 +51,8 @@
 
 
     @yield('content')
+@yield('script')
+    
 
     <div class="pt-2" style="background-color: #202e2f; text-align: center;">
         <div class="container-fluid" >
@@ -60,6 +63,7 @@
             </div>  
         </div>
     </div>
+
 
 
 </body>

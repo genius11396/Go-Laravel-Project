@@ -5,7 +5,7 @@
     <div class="container my-5  d-flex justify-content-center">
         <div class="card col-lg-6 col-md-10 col-sm-10">
     <div class="card-block">
-<form action="">
+<form action=""> 
 <div class="row">
 	    <div class="form-group col-lg-6 col-md-6">
    <div class="p-3">
