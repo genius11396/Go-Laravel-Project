@@ -29,9 +29,7 @@ Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail'
 Route::get('driverorder',function(){
 	return view('frontend.driver.index_order');
 });
-Route::get('driverregister',function(){
-	return view('frontend.driver.driver_register');
-});
+Route::resource('driverregister','frontend\DriverController');
 Route::get('policy',function(){
 	return view('frontend.driver.policy');
 });
@@ -44,3 +42,8 @@ Route::post('/dropfetch','frontend\CustomerController@dropfetch')->name('custome
 Route::resource('city','backend\CityController');
 
 Route::get('dashboard','backend\BackendController@index')->name('dashboard');
+Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
+
+
+Route::get('dashboard','backend\BackendController@index')->name('dashboard');
+

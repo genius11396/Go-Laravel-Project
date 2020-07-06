@@ -40,6 +40,7 @@
 			</div>
 
 			
+			
 			<div class="col-sm-2"></div>
 			<div class="col-sm-10">
 				<button type="submit" class="btn btn-primary">
@@ -51,4 +52,10 @@
 	</div>
 </div>
 
+@endsection
+
+@section('script')
+<script type="text/javascript">
+	
+</script>
 @endsection
