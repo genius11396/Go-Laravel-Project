@@ -93,6 +93,7 @@ class DriverController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->password=$request->pwd;
+        $user->role=2;
         $user->save();
 
         return view('frontend.driver.index_order');
