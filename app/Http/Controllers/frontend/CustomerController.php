@@ -18,18 +18,18 @@ class CustomerController extends Controller
         $division = Division::all();
         return view('frontend.customer.index',compact('division'));
     }
-    function fetch(Request $request)
+
+    public function fetch(Request $request)
     {
        $id=$request->id;
-       $city= City::where('division_id', $id)
-       ->get();
+       $city= City::where('division_id', $id)->get();
        echo $city;
    }
-   function dropfetch(Request $request)
+   
+   public function dropfetch(Request $request)
    {
        $id=$request->id;
-       $city= City::where('division_id', $id)
-       ->get();
+       $city= City::where('division_id', $id)->get();
        echo $city;
    }
 }
