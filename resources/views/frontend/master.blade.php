@@ -15,14 +15,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/font.css')}}">
 
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/select2.min.css')}}">
 
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
-=======
-    <script type="text/javascript"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous" src="{{asset('frontendtemplate/bootstrap/js/jquery.min.js')}}"></script>
->>>>>>> 64fb444150081aa583288a9e32f6ad285e5c7694
+
     <script type="text/javascript" src="{{asset('frontendtemplate/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
     <script type="text/javascript" src="{{asset('frontendtemplate/js/select2.min.js')}}"></script>
