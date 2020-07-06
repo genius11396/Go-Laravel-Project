@@ -18,10 +18,5 @@ $(document).ready(function(){
         });
     }
     carloop();
-
-<<<<<<< HEAD
-
-
-=======
 })
->>>>>>> 64fb444150081aa583288a9e32f6ad285e5c7694
+

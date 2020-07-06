@@ -36,7 +36,7 @@
       <div class="card col-lg-6 col-md-10 col-sm-10">
         <div class="card-block">
 
-          <form action="" method="POST">
+          <form action="{{route('customer.searchdriver')}}" method="POST">
             {{csrf_field()}}
             <div class="row">
 
@@ -187,7 +187,7 @@
             </div>
 
               <div class="mb-4 py-3 px-4 col-lg-12">
-                <a href="{{route('result')}}" class="btn btn-info btn-block">Search</a>
+                 <button type="submit" class="btn btn-info btn-block">Search</button>
               </div>
             </div>
           </form>
