@@ -10,8 +10,6 @@
           <form action="" method="POST">
             {{csrf_field()}}
             <div class="row">
-
-             
             <div class="form-group col-lg-6 col-md-6">
              <div class="p-3">
               <label for="division">Pick up place/City </label>
