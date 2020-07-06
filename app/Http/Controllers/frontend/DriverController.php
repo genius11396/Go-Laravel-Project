@@ -88,7 +88,7 @@ class DriverController extends Controller
        
         $itemString=$request->division;
         //dd($itemString);    
-        $driver->cities()->attach($itemString);
+        $driver->divisions()->attach($itemString);
 
 
        //  dd($driver);

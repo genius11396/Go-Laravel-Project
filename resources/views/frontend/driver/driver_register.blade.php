@@ -25,7 +25,7 @@
             <div class="form-group col-lg-6 col-md-6">
                <div class="p-3">
                   <label for="exampleFormControlSelect1"> Photo</label>
-                  <input type="file" class="" name="photo" multiple="multiple">
+                  <input type="file" class="" name="photo[]" multiple="multiple">
                </div>
             </div>
 
@@ -90,7 +90,7 @@
 
             <div class="form-group col-lg-12 col-md-12 division">
               <label>Can Travel Division</label>
-              <select class="js-example-basic-multiple form-control" name="division" multiple="multiple">
+              <select class="js-example-basic-multiple form-control" name="division[]" multiple="multiple">
                   <option value="null">Select Divisions</option>
 
                     @foreach($divisions as $division)
