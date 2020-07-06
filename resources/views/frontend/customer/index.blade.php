@@ -20,12 +20,32 @@
                 Login
                 </button>
             </a>
-            <a href="" class="p-2">
-                <button class="btn btn-outline-light">
-                Register
-                </button>
-            </a>
-        </div>
+
+            <button class="btn btn-outline-light m-2" data-toggle="modal" data-target="#myModal">
+              Register
+            </button>
+          
+
+            <div id="myModal" class="modal fade" role="dialog" >
+                <div class="modal-dialog">
+
+                  <div class="modal-content modalbg">
+                    <div class="modal-header justify-content-center">
+                      <h3 class="modal-title">Registration</h3>
+                    </div>
+                    <div class="modal-body d-flex justify-content-center" id="link">
+                      <a href="" class="p-2"><button class="btn btn-outline-light">Register for Customer</button></a>
+                      <a href="{{route('driverregister.create')}}" class="p-2">
+                        <button class="btn btn-outline-light">Register for Driver</button></a>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
   </nav>
 @endsection
 

@@ -52,8 +52,8 @@
 			<div class="modal-dialog">
 
 				<div class="modal-content modalbg">
-					<div class="modal-header">
-						<h3 class="modal-title text-center">Order Accept</h3>
+					<div class="modal-header justify-content-center">
+						<h3 class="modal-title">Order Accept</h3>
 						<!-- <button type="button" class="close text-white" data-dismiss="modal">&times;</button> -->
 					</div>
 					<div class="modal-body">

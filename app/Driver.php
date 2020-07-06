@@ -11,7 +11,7 @@ class Driver extends Model
 {
     use SoftDeletes;
 
-    protected $fillable=['name','photo','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
+    protected $fillable=['name','driverphoto','licencephoto','carphoto','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
 
     public function divisions()
      {

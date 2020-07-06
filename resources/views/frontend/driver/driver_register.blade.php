@@ -24,8 +24,8 @@
 
             <div class="form-group col-lg-6 col-md-6">
                <div class="p-3">
-                  <label for="exampleFormControlSelect1"> Photo</label>
-                  <input type="file" class="" name="photo[]" multiple="multiple">
+                  <label for="driverphoto">Driver Photo</label>
+                  <input type="file" class="" id="driverphoto" name="driverphoto">
                </div>
             </div>
 
@@ -35,7 +35,14 @@
                 <input type="number" class="form-control" placeholder='09xxxxxxx' name="phone">
               </div>
             </div>
-      
+
+            <div class="form-group col-lg-6 col-md-6">
+               <div class="p-3">
+                  <label for="licencephoto">Licence Photo</label>
+                  <input type="file" class="" id="licencephoto" name="licencephoto">
+               </div>
+            </div>
+
             <div class="form-group col-lg-6 col-md-6">
              <div class="p-3">
                 <label for="type">Car type</label>
@@ -51,52 +58,10 @@
             </div>
 
             <div class="form-group col-lg-6 col-md-6">
-              <div class="p-3">
-                <label for="exampleFormControlSelect1">Rent a Car Price (Per day)</label>
-                <input type="number" class="form-control" name="price">
-              </div>
-            </div>
-
-            <div class="form-group col-lg-6 col-md-6">
-             <div class="p-3">
-              <label for="homedivision">Home Town </label>
-              <select class="form-control " id="homedivision" name="homedivision">
-                <option value="null">Select Your Home Town</option>
-
-                  @foreach($divisions as $division)
-                  <option value="{{$division->id}}">{{$division->name}}</option>
-                  @endforeach
-                </select>
-              </div>
-            </div>
-
-             <div class="form-group col-lg-6 col-md-6">
-             <div class="p-3">
-              <label for="city">Pick up place/Township </label>
-              <select class="form-control " id="city" name="city">
-              </select>
-             </div>
-            </div>
-
-            <div class="form-group col-lg-12 col-md-12">
-              <div class="p-3">
-                <label for="allcity">Travelable Division </label>
-                  <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="allcity" name="allcity" checked="checked">
-                    <label class="custom-control-label" for="allcity">All Division</label>
-                  </div>
-              </div>
-            </div>
-
-            <div class="form-group col-lg-12 col-md-12 division">
-              <label>Can Travel Division</label>
-              <select class="js-example-basic-multiple form-control" name="division[]" multiple="multiple">
-                  <option value="null">Select Divisions</option>
-
-                    @foreach($divisions as $division)
-                    <option value="{{$division->id}}">{{$division->name}}</option>
-                    @endforeach
-              </select>
+               <div class="p-3">
+                  <label for="carphoto">Car Photo</label>
+                  <input type="file" class="" id="carphoto" name="carphoto">
+               </div>
             </div>
 
             <div class="form-group col-lg-6 col-md-6">
@@ -113,13 +78,64 @@
               </div>
             </div>
 
-            <div class="form-group col-lg-12 col-md-12">
+             <div class="form-group col-lg-6 col-md-6">
+              <div class="p-3">
+                <label for="exampleFormControlSelect1">Rent a Car Price (one day)</label>
+                <input type="number" class="form-control" name="price">
+              </div>
+            </div>
+
+            <div class="form-group col-lg-6 col-md-6">
               <div class="p-3">
                 <label for="details">Car details</label>
                 <textarea class="form-control" name="details" id="details">         
                 </textarea>
               </div>
             </div>
+
+            <div class="form-group col-lg-6 col-md-6">
+             <div class="p-3">
+              <label for="homedivision">Home Town Division</label>
+              <select class="form-control " id="homedivision" name="homedivision">
+                <option value="null">Select Your Home Town</option>
+
+                  @foreach($divisions as $division)
+                  <option value="{{$division->id}}">{{$division->name}}</option>
+                  @endforeach
+                </select>
+              </div>
+            </div>
+
+             <div class="form-group col-lg-6 col-md-6">
+             <div class="p-3">
+              <label for="city">Home Town City</label>
+              <select class="form-control " id="city" name="city">
+              </select>
+             </div>
+            </div>
+
+            <div class="form-group col-lg-12 col-md-12">
+              <div class="p-3">
+                <label for="allcity">Travelable Division </label>
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="allcity" name="allcity" checked="checked">
+                    <label class="custom-control-label" for="allcity">All Divisions</label>
+                  </div>
+              </div>
+            </div>
+
+            <div class="form-group col-lg-12 col-md-12 division">
+              <label>Can Travel Division</label>
+              <select class="js-example-basic-multiple form-control" name="division[]" multiple="multiple">
+                  <option value="null">Select Divisions</option>
+
+                    @foreach($divisions as $division)
+                    <option value="{{$division->id}}">{{$division->name}}</option>
+                    @endforeach
+              </select>
+            </div>
+
+            
 
             <div class="form-group col-lg-12 col-md-12">
               <div class="p-3">
