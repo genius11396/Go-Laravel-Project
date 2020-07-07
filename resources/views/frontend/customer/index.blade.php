@@ -1,53 +1,5 @@
  
-@extends('frontend.master')
-
-@section('nav')
-  <nav class="navbar navbar-dark" style="height: 80px; background-color: #202e2f;">
-        <div class="container-fluid">
-
-            <div class="d-flex flex-grow-1">
-            <a href="#">
-                <img src="{{asset('frontendtemplate/images/go_logo.png')}}" height="100">
-
-                <span id="car" style="position: absolute;">
-                    <img src="{{asset('frontendtemplate/images/car.svg')}}" height="100">
-                </span>
-
-            </a>
-            </div>
-            <a href="" class="p-2">
-                <button class="btn btn-outline-light">
-                Login
-                </button>
-            </a>
-
-            <button class="btn btn-outline-light m-2" data-toggle="modal" data-target="#myModal">
-              Register
-            </button>
-          
-
-            <div id="myModal" class="modal fade" role="dialog" >
-                <div class="modal-dialog">
-
-                  <div class="modal-content modalbg">
-                    <div class="modal-header justify-content-center">
-                      <h3 class="modal-title">Registration</h3>
-                    </div>
-                    <div class="modal-body d-flex justify-content-center" id="link">
-                      <a href="" class="p-2"><button class="btn btn-outline-light">Register for Customer</button></a>
-                      <a href="{{route('driverregister.create')}}" class="p-2">
-                        <button class="btn btn-outline-light">Register for Driver</button></a>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-  </nav>
-@endsection
+@extends('frontend.customer.master')
 
 @section('content')
 <div id="img" style="background-image: url('{{asset('frontendtemplate/images/car.jpeg')}}');">
@@ -237,18 +189,6 @@
     </div>
   </div>
 </div>
-@endsection
-
-@section('footer')
-<div class="pt-2" style="background-color: #202e2f; text-align: center;">
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-12 ">
-                    <p class="text-white pb-3">All right reserved</p>
-                </div>
-            </div>  
-        </div>
-    </div>
 @endsection
 
 @section ('script')

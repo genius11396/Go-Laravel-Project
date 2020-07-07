@@ -1,4 +1,4 @@
-@extends('frontend/master')
+@extends('frontend.customer.master')
 @section('content')
 	<div class="my-5 text-center">
 		<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Detail</h2>
@@ -33,7 +33,10 @@
 				
 
 				<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
+
 						<button onclick="window.history.back()" class="btn btn-info mr-3" style="width: 100px;">Back</button>
+
+
 					<button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 100px;">Order</button>
 				</div>
 			</div>
