@@ -33,7 +33,7 @@
 				
 
 				<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
-						<button data-toggle="modal" data-target="#myModal" class="btn btn-info mr-3" style="width: 100px;">Back</button>
+						<button onclick="window.history.back()" class="btn btn-info mr-3" style="width: 100px;">Back</button>
 					<button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 100px;">Order</button>
 				</div>
 			</div>
