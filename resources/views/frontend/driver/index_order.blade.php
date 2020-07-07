@@ -1,4 +1,4 @@
-@extends('frontend.master')
+@extends('frontend.driver.master')
 
 @section('content')
 

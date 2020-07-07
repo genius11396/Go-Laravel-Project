@@ -1,4 +1,4 @@
-@extends('frontend/master')
+@extends('frontend.customer.master')
 @section('content')
 	<div class="my-5 text-center">
 		<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Search List</h2>
@@ -6,7 +6,7 @@
 	</div>
 
 
-	<div class="container mb-2 ">
+	<div class="container my-5 pb-5 ">
 		{{--		foreach   --}}
 
 

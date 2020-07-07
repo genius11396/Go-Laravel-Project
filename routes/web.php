@@ -24,8 +24,6 @@ use Illuminate\Support\Facades\Route;
 //SLN
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 
-Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail');
-
 Route::get('driverorder',function(){
 	return view('frontend.driver.index_order');});
 Route::resource('order','frontend\OrderController');
@@ -52,3 +50,7 @@ Route::resource('city','backend\CityController');
 Route::get('dashboard','backend\BackendController@index')->name('dashboard');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
