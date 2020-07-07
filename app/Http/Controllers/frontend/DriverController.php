@@ -52,19 +52,23 @@ class DriverController extends Controller
         //     'password' => 'required|min:5|max:191'
         // ]);
 
-        $images= $request->file('photo');
-        if ($images) {
-            foreach ($images as $image) {
-                $imagesName=uniqid().time().'.'.$image->getClientOriginalExtension();
-                $image->move(public_path('images/driver'),$imagesName);
-                $filepath='images/driver'.$imagesName;
-                $image_array[]=$filepath;
-            }
-        }
+        $driverimageName = time().'.'.$request->driverphoto->extension();
+        $request->driverphoto->move(public_path('images/driver'),$driverimageName);
+        $driverfilepath= 'images/driver'.$driverimageName;
+
+        $licenceimageName = time().'.'.$request->licencephoto->extension();
+        $request->licencephoto->move(public_path('images/licence'),$licenceimageName);
+        $licencefilepath= 'images/licence'.$licenceimageName;
+
+         $carimageName = time().'.'.$request->carphoto->extension();
+        $request->carphoto->move(public_path('images/car'),$carimageName);
+        $carfilepath= 'images/car'.$carimageName;
 
         $driver=new Driver;
         $driver->name=$request->name;
-        $driver->photo=json_encode($image_array);
+        $driver->driverphoto=$driverfilepath;
+        $driver->licencephoto=$licencefilepath;
+        $driver->carphoto=$carfilepath;
         $driver->phone=$request->phone;
         $driver->cartype=$request->type;
         $driver->carno=$request->carno;
