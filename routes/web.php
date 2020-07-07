@@ -23,7 +23,6 @@ use Illuminate\Support\Facades\Route;
 
 //SLN
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
-Route::get('searchdetail','frontend\DetailController@detailpage')->name('detail');
 Route::get('driverorder',function(){
 	return view('frontend.driver.index_order');
 });
@@ -35,6 +34,8 @@ Route::post('citybydivision','frontend\DriverController@citybydivision')->name('
 //------------------
 
 // NPS
+
+Route::get('/searchdriverdetail/{id}','frontend\CustomerController@details')->name('customer.details');
 Route::get('/','frontend\CustomerController@index')->name('home');
 Route::post('/fetch','frontend\CustomerController@fetch')->name('customer.fetch');
 Route::post('/dropfetch','frontend\CustomerController@dropfetch')->name('customer.dropfetch');

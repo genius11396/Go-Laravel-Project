@@ -1,4 +1,4 @@
-
+ 
 @extends('frontend.master')
 
 @section('nav')
@@ -42,7 +42,7 @@
 
             <div class="form-group col-lg-6 col-md-6">
              <div class="p-3">
-              <label for="division">Pick up place/City </label>
+              <label for="division">Pick up place/Division </label>
               <select class="form-control " id="division" name="pickupdivision">
                 <option value="">Select Division</option>
                 @foreach($division as $row)
@@ -85,50 +85,50 @@
               <div class="form-group col-lg-6 col-md-6">
                <div class="p-3">
                 <label for="exampleFormControlSelect1">Pick up Date </label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option value="{{date('M - d')}}">{{date('M - d')}}</option>
+                <select class="form-control" name="pickupdate" id="exampleFormControlSelect1">
+                  <option value="{{date('y-m-d')}}">{{date('M - d')}}</option>
                   <option value="{{
-                    date('M - d',strtotime('today + 1day'))
+                    date('y-m-d',strtotime('today + 1day'))
                   }}">{{
                     date("M - d",strtotime('today + 1day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 2day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 2day'))
                   }}">{{
                     date("M - d",strtotime('today + 2day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 3day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 3day'))
                   }}">{{
                     date("M - d",strtotime('today + 3day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 4day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 4day'))
                   }}">{{
                     date("M - d",strtotime('today + 4day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 5day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 5day'))
                   }}">{{
                     date("M - d",strtotime('today + 5day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 6day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 6day'))
                   }}">{{
                     date("M - d",strtotime('today + 6day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 7day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 7day'))
                   }}">{{
                     date("M - d",strtotime('today + 7day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 8day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 8day'))
                   }}">{{
                     date("M - d",strtotime('today + 8day'))
                   }}</option>
-                  <option value="{
-                    date('M - d',strtotime('today + 9day'))
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 9day'))
                   }}">{{
                     date("M - d",strtotime('today + 9day'))
                   }}</option>
@@ -155,32 +155,53 @@
 
               <div class="form-group col-lg-6 col-md-6">
                 <div class="p-3">
-                  <label for="exampleFormControlSelect1">Drop off Date </label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                   <option >{{date("M - d")}}</option>
-                   <option>{{
+                  <label for="dropdate">Drop off Date </label>
+                  <select class="form-control" id="dropdate" name="dropdate">
+                   <option value="{{date('y-m-d')}}">{{date("M - d")}}</option>
+                   <option value="{{
+                    date('y-m-d',strtotime('today + 1day'))
+                  }}">{{
                     date("M - d",strtotime('today + 1day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 2day'))
+                  }}">{{
                     date("M - d",strtotime('today + 2day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 3day'))
+                  }}">{{
                     date("M - d",strtotime('today + 3day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 4day'))
+                  }}">{{
                     date("M - d",strtotime('today + 4day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 5day'))
+                  }}">{{
                     date("M - d",strtotime('today + 5day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 6day'))
+                  }}">{{
                     date("M - d",strtotime('today + 6day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 7day'))
+                  }}">{{
                     date("M - d",strtotime('today + 7day'))
                   }}</option>
-                  <option>{{
+                  <option value="{{
+                    date('y-m-d',strtotime('today + 8day'))
+                  }}">{{
                     date("M - d",strtotime('today + 8day'))
+                  }}</option>
+                   <option value="{{
+                    date('y-m-d',strtotime('today + 9day'))
+                  }}">{{
+                    date("M - d",strtotime('today + 9day'))
                   }}</option>
                 </select>
               </div>

@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class ResultController extends Controller
 {
-	public function resultpage()
+	public function resultpage($id)
     {
-    	return view('frontend.customer.search_result');
+    	//  $driver=Driver::find($id);
+    	// return view('frontend.customer.search_result',compact('driver'));
     }
     
 }

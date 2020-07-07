@@ -18,8 +18,5 @@ class City extends Model
     	return $this->belongsTo('App\Division');
     }
 
-    public function drivers()
-     {
-     	return $this->belongsToMany('App\Driver','cantraveldriver','driver_id','city_id')->withTimestamps();
-     }
+   
 }

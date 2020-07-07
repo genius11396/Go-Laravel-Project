@@ -16,15 +16,15 @@ class CreateCantraveldriverTable extends Migration
         Schema::create('cantraveldriver', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('driver_id');
-            $table->unsignedBigInteger('city_id');
+            $table->unsignedBigInteger('division_id');
             $table->timestamps();
 
             $table->foreign('driver_id')
                   ->references('id')->on('drivers')
                   ->onDelete('cascade');
                   
-            $table->foreign('city_id')
-                  ->references('id')->on('cities')
+            $table->foreign('division_id')
+                  ->references('id')->on('divisions')
                   ->onDelete('cascade');
         });
     }

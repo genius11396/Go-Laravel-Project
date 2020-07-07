@@ -70,29 +70,34 @@ class DriverController extends Controller
         $driver->carno=$request->carno;
         $driver->cardetail=$request->details;
         $driver->price=$request->price;
-        $driver->city_id=$request->hometown;
+        $driver->city_id=$request->city;
+        $driver->division_id=$request->homedivision;
         $driver->busy=0;
         $driver->travelablecity=$request->division;
        // dd($request->division);
          if ($request->division==null) 
             {
-                $driver->status=0;
+                $driver->travelablecity=0;
             }
         else
             {  
-                $driver->status=1;
+                $driver->travelablecity=1;
             }  
         $driver->noofseats=$request->seat;
         $driver->save();
        
         $itemString=$request->division;
-        $driver->cities()->attach($itemString);
+        //dd($itemString);    
+        $driver->divisions()->attach($itemString);
+
+
        //  dd($driver);
 
         $user=new User;
         $user->name=$request->name;
         $user->email=$request->email;
         $user->password=$request->pwd;
+        $user->role=2;
         $user->save();
 
         return view('frontend.driver.index_order');
@@ -143,13 +148,14 @@ class DriverController extends Controller
         
     }
 
-    // public function citybydivision(Request $request)
-    // {
+    public function citybydivision(Request $request)
+    {
         
-    //     // dd(request('id'));   
-    //     $id=request('id');
-    //     $cities=City::where('division_id',$id)->get();
-    //     // dd($cities);
-    //     return $cities;
-    // }
+        // dd(request('id'));   
+        $id=request('id');
+       // dd($id);
+        $cities=City::where('division_id',$id)->get();
+        // dd($cities);
+       return $cities;
+    }
 }

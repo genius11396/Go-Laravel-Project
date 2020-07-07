@@ -58,16 +58,24 @@
             </div>
 
             <div class="form-group col-lg-6 col-md-6">
-              <div class="p-3">
-                <label for="exampleFormControlSelect1">Home Town </label>
-                <select class="form-control" id="exampleFormControlSelect1" name="hometown">
-                  <option value="null">Select Your Home Town</option>
+             <div class="p-3">
+              <label for="homedivision">Home Town </label>
+              <select class="form-control " id="homedivision" name="homedivision">
+                <option value="null">Select Your Home Town</option>
 
                   @foreach($divisions as $division)
                   <option value="{{$division->id}}">{{$division->name}}</option>
                   @endforeach
                 </select>
               </div>
+            </div>
+
+             <div class="form-group col-lg-6 col-md-6">
+             <div class="p-3">
+              <label for="city">Pick up place/Township </label>
+              <select class="form-control " id="city" name="city">
+              </select>
+             </div>
             </div>
 
             <div class="form-group col-lg-12 col-md-12">
@@ -82,7 +90,7 @@
 
             <div class="form-group col-lg-12 col-md-12 division">
               <label>Can Travel Division</label>
-              <select class="js-example-basic-multiple form-control" name="division" multiple="multiple">
+              <select class="js-example-basic-multiple form-control" name="division[]" multiple="multiple">
                   <option value="null">Select Divisions</option>
 
                     @foreach($divisions as $division)
@@ -163,33 +171,33 @@
               }
          })
 
-          // $("#division").change(function(){
-          //   // $("#division").show();
-          //   var id=$(this).val();
-          //   console.log(id);
+          $("#homedivision").change(function(){
+            // $("#division").show();
+            var id=$(this).val();
+            console.log(id);
 
-          //   // $.ajaxSetup({
-          //   // headers: {
-          //   //   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          //   //   }
-          //   // });
+            $.ajaxSetup({
+            headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+            });
 
-          //   // $.post("/citybydivision",{id:id},function(res){
-          //   //   // console.log(res);
-          //   //    var html="";
-          //   //   $.each(res,function(i,v){
+            $.post("/citybydivision",{id:id},function(res){
+              // console.log(res);
+               var html="";
+              $.each(res,function(i,v){
 
-          //   //     var id=v.id;
-          //   //     var name=v.name;
-          //   //     console.log(id+name);
+                var id=v.id;
+                var name=v.name;
+                console.log(id+name);
                
-          //   //     html+=` <option value="${id}">${name}</option>`;
-          //   //   })
-          //   //    $(".cities").html(html);
+                html+=` <option value="${id}">${name}</option>`;
+              })
+               $("#city").html(html);
 
-          //   // })
+            })
 
-          // })
+          })
 
       
           

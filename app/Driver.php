@@ -6,18 +6,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\City;
 use App\User;
+use App\Division;
 
 
 class Driver extends Model
 {
     use SoftDeletes;
 
+    protected $fillable=['name','photo','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
+ 
 
-    protected $fillable=['name','photo','phone','cartype','carno','cardetail','price','hometown','travelablecity','noofseats','busy','status','city_id'];
-
-    public function cities()
+    public function divisions()
      {
-     	return $this->belongsToMany('App\City','cantraveldriver','driver_id','city_id')->withTimestamps();
+     	return $this->belongsToMany('App\Division','cantraveldriver','driver_id','division_id')->withTimestamps();
      }
 
      public function user()

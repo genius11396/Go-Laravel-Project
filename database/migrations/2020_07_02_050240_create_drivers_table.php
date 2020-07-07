@@ -22,12 +22,11 @@ class CreateDriversTable extends Migration
             $table->text('carno');
             $table->text('cardetail');
             $table->integer('price');
-            $table->text('hometown');
-            $table->text('travelablecity');
+            $table->integer('division_id');
+            $table->integer('travelablecity');
             $table->integer('noofseats');
             $table->string('busy');
             $table->unsignedBigInteger('city_id');
-            $table->integer('status');
             $table->timestamps();
             $table->softDeletes();
         });
