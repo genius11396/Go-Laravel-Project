@@ -25,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
-
-
+Route::get('driverform','frontend\DriverController@create')->name('driverform');
 Route::post('driverregister','frontend\DriverController@store')->name('driverregister');
+Route::post('indexdriver','frontend\DriverController@index')->name('indexdriver');
 Route::get('policy',function(){
 	return view('frontend.driver.policy');});
 

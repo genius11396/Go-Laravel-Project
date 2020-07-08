@@ -75,7 +75,7 @@
                     </div>
                     <div class="modal-body d-flex justify-content-center" id="link">
                       <a href="{{route('register')}}" class="p-2"><button class="btn btn-outline-light">Register for Customer</button></a>
-                      <a href="{{route('driverregister.create')}}" class="p-2">
+                      <a href="{{route('driverform')}}" class="p-2">
                         <button class="btn btn-outline-light">Register for Driver</button></a>
                     </div>
                     <div class="modal-footer">
@@ -98,7 +98,7 @@
     <div class="outcard d-flex justify-content-center">
       <div class="card col-lg-9 col-md-12 col-sm-12">
         <div class="card-block">
-          <form method="POST" enctype="multipart/form-data" action="{{route('order.store')}}">
+          <form method="POST" enctype="multipart/form-data" action="">
             @csrf
             <input type="hidden" name="cusname" id="cusname" value="1">
             <input type="hidden" name="driname" id="driname" value="1">
