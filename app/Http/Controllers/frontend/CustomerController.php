@@ -46,12 +46,23 @@ class CustomerController extends Controller
 
 
    public function searchdriver(Request $request)
-   {
+   { 
      $pickupdivision=$request->pickupdivision;
      $pickupcity=$request->pickupcity;
      $dropoffdivision=$request->dropoffdivision;
+     $dropoffcity=$request->dropoffdivision;
      $pickupdate=$request->pickupdate;
      $dropdate=$request->dropdate;
+         $pickuptime=$request->pickuptime;
+             $pickuptimeam=$request->pickuptimeam;
+            
+
+
+
+     $userorderdetails=[$pickupdivision,$pickupcity,$dropoffdivision,$dropoffcity,$pickupdate,$dropdate,$pickuptime,$pickuptimeam];
+
+
+
      $drivers= Driver::all();
      $driv=$drivers->where('busy','=',0);
      foreach ($driv as $driver ){
@@ -69,14 +80,14 @@ class CustomerController extends Controller
 //   dd('hello');
 // }
 
-
+ 
        $dropdate = strtotime($dropdate);
        $pickupdate = strtotime($pickupdate);
        $interva= ($dropdate - $pickupdate)/60/60/24;
        $interval=1+$interva;
-    
+     
 
- return view('frontend.customer.search_result',compact('samedivision','usersdriver','interval'));
+ return view('frontend.customer.search_result',compact('samedivision','usersdriver','interval','userorderdetails'));
 
 
 

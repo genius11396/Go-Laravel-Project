@@ -28,7 +28,7 @@
     <script type="text/javascript" src="{{asset('frontendtemplate/js/select2.min.js')}}"></script>
 </head>
 
-<body> 
+<body style="position: relative;min-height: 100vh"> 
     <nav class="navbar navbar-dark" style="height: 80px; background-color: #202e2f;">
         <div class="container-fluid">
 
@@ -105,16 +105,11 @@
     @yield('content')
 
     @yield('script')
-    
-    
-</body>
-    <footer class="pt-2" style="background-color: #202e2f; text-align: center;">
-        <div class="container-fluid" >
-            <div class="row">
-                <div class="col-12 ">
-                    <p class="text-white pb-3">All right reserved</p>
-                </div>
-            </div>  
-        </div>
+       
+        <footer class="pt-2" style="position: absolute;bottom: 0;width:100%;height: 5rem; background-color: #202e2f; text-align:center;">
+         <p class="text-white py-3">All right reserved</p>
+
     </footer>
+</body>
+
 </html>

@@ -12,7 +12,7 @@
     <div class="shadow-lg p-3 mb-5 bg-white rounded col-lg-6 col-md-10 col-sm-10 " >
       <div class="card-block " >
         
-        <form action="{{route('driverregister.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('driverregister')}}" method="POST" enctype="multipart/form-data">
           @csrf 
           <div class="row">
       	    <div class="form-group col-lg-6 col-md-6">

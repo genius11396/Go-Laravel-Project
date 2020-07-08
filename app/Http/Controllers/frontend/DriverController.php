@@ -8,6 +8,8 @@ use App\Driver;
 use App\Division;
 use App\City;
 use App\User;
+use App\Order;
+use Illuminate\Support\Facades\Hash;
 
 class DriverController extends Controller
 {
@@ -28,7 +30,6 @@ class DriverController extends Controller
      */
     public function create()
     {
-
         $divisions=Division::all();
         // dd($divisions);
         return view('frontend.driver.driver_register',compact('divisions'));
@@ -100,59 +101,17 @@ class DriverController extends Controller
         $user=new User;
         $user->name=$request->name;
         $user->email=$request->email;
-        $user->password=$request->pwd;
+        $user->password=Hash::make($request->pwd);
         $user->save();
 
         $user->assignRole('driver');
         // return $user;
+        $orders=Order::all();
 
-        return view('frontend.driver.index_order');
+
+        return view('frontend.driver.index_order',compact('orders'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        
-    }
 
     public function citybydivision(Request $request)
     {

@@ -4,95 +4,41 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Driver;
 use App\Order;
-
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-          
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+	public function requestorder(Request $request)
+	{
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $order=new Order;
-        $order->user_id=$request->cusname;
-        $order->driver_id=$request->driname;
-        $order->pickup_place=$request->pupplace;
-        $order->dropoff_place=$request->doffplace;
-        $order->pickup_date=$request->pupdate;
-        $order->dropoff_date=$request->doffdate;
-        $order->pickup_time=$request->puptime;
-        $order->price=$request->price;
-        $order->cartype=$request->cartype;
+		$user_id=$request->user_id;
+		$driver_id=$request->driver_id;
+		$cartype=$request->cartype;
+		$total=$request->total;
+		$pickupdivision=$request->pickupdivision;
+		$pickupcity =$request->pickupcity;
+		$dropoffdivision=$request->dropoffdivision;
+		$dropoffcity=$request->dropoffcity;
+		$pickupdate=$request->pickupdate;
+		$dropdate=$request->dropdate;
+		$pickuptime=$request->pickuptime;
+		$pickuptimeam=$request->pickuptimeam;
 
+   		$order=new Order;
+        $order->user_id=$user_id;
+        $order->driver_id=$driver_id;
+        $order->pickup_division=$pickupdivision;
+        $order->pickup_city=$pickupcity;
+        $order->dropoff_division=$dropoffdivision;
+        $order->dropoff_city=$dropoffcity;
+        $order->pickup_date=$pickupdate;
+        $order->dropoff_date=$dropdate;
+        $order->pickup_time=$pickuptime;
+        $order->pickup_time_am=$pickuptimeam;
+        $order->price=$total;
+        $order->cartype=$cartype;
         $order->save();
-        return view('frontend.driver.index_order');  
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        ;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+		
+	}
 }

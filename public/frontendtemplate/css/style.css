@@ -41,5 +41,10 @@
   	border-radius: 10px;*/
   	background-image: linear-gradient(45deg, #D2FFFF,#79E7E7, #00AAAA, #007588);
 }
+.allbutton {
+	background-color: #018ABE;
+	border-color: #018ABE;
+	color: white;
+}
 
 

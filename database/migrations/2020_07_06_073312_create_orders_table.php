@@ -17,13 +17,17 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('driver_id');
-            $table->string('pickup_place');
-            $table->string('dropoff_place');
+            $table->string('pickup_division');
+            $table->string('pickup_city');
+            $table->string('dropoff_division');
+            $table->string('dropoff_city');
             $table->date('pickup_date');
             $table->date('dropoff_date');
             $table->integer('pickup_time');
+            $table->string('pickup_time_am');
             $table->integer('price');
             $table->string('cartype');
+            $table->integer('status');
             $table->timestamps();
             $table->softDeletes();
 
