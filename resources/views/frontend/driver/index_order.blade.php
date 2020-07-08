@@ -26,6 +26,10 @@
           <button class="btn btn-info m-2">Check Orders</button>
         </a>
 
+        <a href="{{route('policy')}}">
+          <button class="btn btn-info m-2">Policy</button>
+        </a>
+
     @role('driver')
     <ul class="m-2">
         <!-- Authentication Links -->

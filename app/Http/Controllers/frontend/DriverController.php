@@ -106,8 +106,6 @@ class DriverController extends Controller
         $user->assignRole('driver');
         // return $user;
         $orders=Order::all();
-
-
         return view('frontend.driver.index_order',compact('orders'));
     }
 
@@ -121,5 +119,11 @@ class DriverController extends Controller
         $cities=City::where('division_id',$id)->get();
         // dd($cities);
        return $cities;
+    }
+
+    public function policy()
+    {
+        
+        return view('frontend.driver.policy');
     }
 }

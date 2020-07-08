@@ -28,11 +28,13 @@ Route::get('searchresult','frontend\ResultController@resultpage')->name('result'
 
 
 Route::post('driverregister','frontend\DriverController@store')->name('driverregister');
+
+
 Route::get('driverform','frontend\DriverController@create')->name('driverform');
 Route::get('indexdriver','frontend\DriverController@index')->name('indexdriver');
 
-Route::get('policy',function(){
-	return view('frontend.driver.policy');});
+Route::get('policy','frontend\DriverController@policy')->name('policy');
+
 
 Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
 
