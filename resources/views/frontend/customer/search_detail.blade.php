@@ -33,8 +33,16 @@
 				
 
 				<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
+<<<<<<< HEAD
 						<a><button class="btn btn-info mr-3" style="width: 100px;">Back</button></a>
 					<button data-toggle="modal" data-target="#Order" class="btn btn-info" style="width: 100px;">Booking</button>
+=======
+
+						<button onclick="window.history.back()" class="btn btn-info mr-3" style="width: 100px;">Back</button>
+
+
+					<button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 100px;">Order</button>
+>>>>>>> 760a8e03ed04b2da726b693128ee4b552c96d7f5
 				</div>
 			</div>
 		</div>

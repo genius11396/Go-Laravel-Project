@@ -17,6 +17,8 @@ class Driver extends Model
 
     protected $fillable=['name','driverphoto','licencephoto','carphoto','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
 
+
+
     public function divisions()
      {
      	return $this->belongsToMany('App\Division','cantraveldriver','driver_id','division_id')->withTimestamps();
