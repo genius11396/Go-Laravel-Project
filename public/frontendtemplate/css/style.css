@@ -47,4 +47,12 @@
 	color: white;
 }
 
+body, wrapper {
+   min-height:100vh;
+}
+
+.flex-fill {
+   flex: 1 1 auto;
+}
+
 

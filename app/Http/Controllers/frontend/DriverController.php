@@ -10,7 +10,6 @@ use App\City;
 use App\User;
 use App\Order;
 use Illuminate\Support\Facades\Hash;
-
 class DriverController extends Controller
 {
     /**

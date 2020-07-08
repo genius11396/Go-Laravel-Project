@@ -29,12 +29,19 @@
 </head>
 
 <body> 
+    <wrapper class="d-flex flex-column">
     @yield('nav')
 
+    <main class="flex-fill">
     @yield('content')
+    </main>
+        
+    <footer>
+    @yield('footer')
+    </footer>
+
+    </wrapper>
 
     @yield('script')
-    
-    @yield('footer')
 </body>
 </html>

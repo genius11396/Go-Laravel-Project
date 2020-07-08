@@ -1,12 +1,14 @@
 @extends('frontend.customer.master')
 @section('content')
-<div class="my-5 text-center">
-	<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Search List</h2>
-	<!-- <div style="padding-left: 250px;padding-right: 250px;"><hr></div> -->
-</div>
 
-<div class="container my-5 pb-5 ">
-	{{--		foreach   --}}
+	<div class="mt-5 mb-3 text-center">
+		<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Search List</h2>
+		<!-- <div style="padding-left: 250px;padding-right: 250px;"><hr></div> -->
+	</div>
+
+
+	<div class="container pb-5 ">
+		{{--		foreach   --}}
 
 
 	@if(sizeof($usersdriver)>0)
@@ -40,6 +42,7 @@
 					<i class="fas fa-money-bill" id="icon"></i>
 					<p>{{$sameone->price * $interval}}</p>
 				</div>
+
 			</div>
 			<div class="col-sm-4 d-lg-none">
 
@@ -48,6 +51,7 @@
 			<div class=" col-lg-2 col-md-12 col-sm-12 pr-5 pb-3">
 				<button class="rounded allbutton ml-0 h-50 cardetails" style="background-color: #018ABE">Details</button>
 				<button type="submit" class="rounded allbutton h-50 order" data-toggle="modal" data-target="#myModal2" style="width: 80px;" data-driver_id="{{$sameone->id}}" data-cartype="{{$sameone->cartype}}" data-total="{{$sameone->price * $interval}}" data-user_id="{{Auth::user()->id}}" data-pickupdivision="{{$userorderdetails[0]}}" data-pickupcity="{{$userorderdetails[1]}}" data-dropoffdivision="{{$userorderdetails[2]}}" data-dropoffcity="{{$userorderdetails[3]}}" data-pickupdate="{{$userorderdetails[4]}}" data-dropdate="{{$userorderdetails[5]}}" data-pickuptime="{{$userorderdetails[6]}}" data-pickuptimeam="{{$userorderdetails[7]}}" >Order</button></div>
+
 
 
 			<div class="cardetail col-lg-2 col-md-4 col-sm-4 offset-lg-2">
@@ -126,6 +130,7 @@
 						<i class="fas fa-money-bill" id="icon"></i>
 						<p>{{$samezero->price }}(per day)</p>
 					</div>
+
 
 				</div>
 			</div>

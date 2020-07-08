@@ -51,4 +51,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Driver');
     }
+  
+
+    public function initials(){
+        $words = explode(" ", $this->name );
+        $initials = null;
+        foreach ($words as $w) {
+        $initials .= $w[0];
+        }
+        return strtoupper($initials);
+    }
+
+
 }

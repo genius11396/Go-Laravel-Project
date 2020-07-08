@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //SLN
+
+
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 
 
@@ -30,6 +32,8 @@ Route::get('policy',function(){
 	return view('frontend.driver.policy');});
 
 Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
+
+
 
 //------------------
 
@@ -41,20 +45,15 @@ Route::post('/fetch','frontend\CustomerController@fetch')->name('customer.fetch'
 Route::post('/dropfetch','frontend\CustomerController@dropfetch')->name('customer.dropfetch');
 Route::post('/searchdriver','frontend\CustomerController@searchdriver')->name('customer.searchdriver');
 
+//--------
+
 Route::resource('city','backend\CityController');
 
 Route::get('dashboard','backend\BackendController@index')->name('dashboard');
 Route::post('requestorder','frontend\OrderController@requestorder')->name('order.requestorder');
 
 
-
+//----
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-//driver access group
-// Route::middleware('role:driver')->group(function(){
-// Route::get('driverorder',function(){
-// 	return view('frontend.driver.index_order');
-// });
-//});
