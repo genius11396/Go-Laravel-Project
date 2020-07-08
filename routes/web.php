@@ -28,6 +28,9 @@ Route::get('searchresult','frontend\ResultController@resultpage')->name('result'
 
 
 Route::post('driverregister','frontend\DriverController@store')->name('driverregister');
+Route::get('driverform','frontend\DriverController@create')->name('driverform');
+Route::get('indexdriver','frontend\DriverController@index')->name('indexdriver');
+
 Route::get('policy',function(){
 	return view('frontend.driver.policy');});
 

@@ -94,7 +94,7 @@
                     </div>
                     <div class="modal-body d-flex justify-content-center" id="link">
                       <a href="{{route('register')}}" class="p-2"><button class="btn btn-light">Register for Customer</button></a>
-                      <a href="{{route('driverregister.create')}}" class="p-2">
+                      <a href="{{route('driverform')}}" class="p-2">
                         <button class="btn btn-light">Register for Driver</button></a>
                     </div>
                     <div class="modal-footer">
