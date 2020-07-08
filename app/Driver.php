@@ -13,6 +13,7 @@ class Driver extends Model
 {
     use SoftDeletes;
 
+    // protected $guard = 'driver';
 
     protected $fillable=['name','driverphoto','licencephoto','carphoto','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
 
@@ -26,5 +27,6 @@ class Driver extends Model
      	return $this->hasOne('App\User');
 
      }
+
 }
  

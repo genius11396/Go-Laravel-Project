@@ -42,4 +42,12 @@
   	background-image: linear-gradient(45deg, #D2FFFF,#79E7E7, #00AAAA, #007588);
 }
 
+body, wrapper {
+   min-height:100vh;
+}
+
+.flex-fill {
+   flex: 1 1 auto;
+}
+
 

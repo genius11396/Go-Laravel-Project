@@ -29,8 +29,11 @@
 </head>
 
 <body> 
-    <nav class="navbar navbar-dark" style="height: 80px; background-color: #202e2f;">
+
+<wrapper class="d-flex flex-column">
+    <nav class="navbar navbar-dark flex-fill " style="height: 80px; background-color: #202e2f;">
         <div class="container-fluid">
+
 
             <div class="d-flex flex-grow-1">
             <a href="#">
@@ -42,45 +45,46 @@
 
             </a>
             </div>
-            <a href="{{route('login')}}" class="p-2 btn btn-outline-light">
-                Login
+
+    @role('customer')
+    <ul class="p-3">
+        <!-- Authentication Links -->
+        @guest
+        @else   
+        <div id="username">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre >
+                    <!-- {{ Auth::user()->name }} -->
+                    <span style="border-radius: 100px; background-color: #028686; padding: 9px;">{{ Auth::user()->initials() }} </span>
+                    <span class="caret"></span>
+                </a>
+                
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
+            </div>
+            </li>
+        </div>
+        @endguest
+    </ul>
+    @else
+            <a href="{{route('login')}}">
+                <button class="btn btn-info">Login</button>
             </a>
 
-            <button class="btn btn-outline-light m-2" data-toggle="modal" data-target="#myModal">
+            <button class="btn btn-info m-2" data-toggle="modal" data-target="#myModal">
               Register
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                @else
-                <div id="username">
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                        </form>
-                    </div>
-                    </li>
-                </div>
-                    @endguest
-                </ul>
-            </div>
-
-          
-
-            <div id="myModal" class="modal fade" role="dialog" >
+    @endrole
+       <div id="myModal" class="modal fade" role="dialog" >
                 <div class="modal-dialog">
 
                   <div class="modal-content modalbg">
@@ -88,9 +92,9 @@
                       <h3 class="modal-title">Registration</h3>
                     </div>
                     <div class="modal-body d-flex justify-content-center" id="link">
-                      <a href="{{route('register')}}" class="p-2"><button class="btn btn-outline-light">Register for Customer</button></a>
+                      <a href="{{route('register')}}" class="p-2"><button class="btn btn-light">Register for Customer</button></a>
                       <a href="{{route('driverregister.create')}}" class="p-2">
-                        <button class="btn btn-outline-light">Register for Driver</button></a>
+                        <button class="btn btn-light">Register for Driver</button></a>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
@@ -98,16 +102,11 @@
                   </div>
                 </div>
               </div>
-
-            </div>
-        </nav>
+        </div>
+    </nav>
 
     @yield('content')
 
-    @yield('script')
-    
-    
-</body>
     <footer class="pt-2" style="background-color: #202e2f; text-align: center;">
         <div class="container-fluid" >
             <div class="row">
@@ -117,4 +116,13 @@
             </div>  
         </div>
     </footer>
+</wrapper>
+
+
+    @yield('script')
+
+</body>
+    
 </html>
+
+

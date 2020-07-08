@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 
 //SLN
+
+
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 
 Route::get('driverorder',function(){
@@ -35,6 +37,8 @@ Route::get('policy',function(){
 
 Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
 
+
+
 //------------------
 
 // NPS
@@ -45,12 +49,14 @@ Route::post('/fetch','frontend\CustomerController@fetch')->name('customer.fetch'
 Route::post('/dropfetch','frontend\CustomerController@dropfetch')->name('customer.dropfetch');
 Route::post('/searchdriver','frontend\CustomerController@searchdriver')->name('customer.searchdriver');
 
+//--------
+
 Route::resource('city','backend\CityController');
 
 Route::get('dashboard','backend\BackendController@index')->name('dashboard');
 
 
-
+//----
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

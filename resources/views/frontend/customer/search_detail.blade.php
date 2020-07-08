@@ -7,7 +7,7 @@
  
 	<div class="container">
 		<div class=" no-gutters my-1" id="bg">
-			<div class="row mt-5">
+			<div class="row">
 				<div class="col-lg-4 col-md-4 col-sm-4" >
 					<img src="{{asset('frontendtemplate/images/car1.jpg')}}" class="img-fluid card-img " width="100">
 				</div>
@@ -33,13 +33,13 @@
 				
 
 				<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
-						<a><button data-toggle="modal" data-target="#myModal" class="btn btn-info mr-3" style="width: 100px;">Back</button></a>
-					<button data-toggle="modal" data-target="#myModal" class="btn btn-info" style="width: 100px;">Order</button>
+						<a><button class="btn btn-info mr-3" style="width: 100px;">Back</button></a>
+					<button data-toggle="modal" data-target="#Order" class="btn btn-info" style="width: 100px;">Booking</button>
 				</div>
 			</div>
 		</div>
 
-		<div id="myModal" class="modal fade" role="dialog" >
+		<div id="Order" class="modal fade" role="dialog" >
 			<div class="modal-dialog">
 
 				<div class="modal-content modalbg">

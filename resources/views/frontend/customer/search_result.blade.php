@@ -1,12 +1,12 @@
 @extends('frontend.customer.master')
 @section('content')
-	<div class="my-5 text-center">
+	<div class="mt-5 mb-3 text-center">
 		<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Search List</h2>
 		<!-- <div style="padding-left: 250px;padding-right: 250px;"><hr></div> -->
 	</div>
 
 
-	<div class="container my-5 pb-5 ">
+	<div class="container pb-5 ">
 		{{--		foreach   --}}
 
 
@@ -46,9 +46,13 @@
 					
 				</div>
 				<div class="col-lg-2 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
-					 <a href="{{route('customer.details',$sameone->id)}}" class="btn btn-info pr-2" >Details</a>
+					 <a href="{{route('customer.details',$sameone->id)}}"  >
+					 	<button class="btn btn-info mr-2"><i class="fa fa-eye"></i></button>
+					 </a>
 
-					 <a href="" class="btn btn-info pr-2" >Order</a>
+					 <a href="">		
+					 	<button class="btn btn-info">Booking</button>
+					 </a>
 				
 
 				</div>
@@ -97,8 +101,12 @@
 					
 				</div>
 				<div class="col-lg-2 col-md-12 col-sm-12 d-flex justify-content-end pr-5 pb-3">
-				 <a href="{{route('customer.details',$sameone->id)}}" class="btn btn-info pr-2" >Details</a>
-					 <a href="" class="btn btn-info pr-2" >Order</a>
+				 <a href="{{route('customer.details',$samezero->id)}}"  >
+				 	<button class="btn btn-info mr-2"><i class="fa fa-eye"></i></button>
+				 </a>
+				 <a href=""  >
+				 	<button class="btn btn-info">Booking</button>
+				 </a>
 				</div>
 			</div>
 

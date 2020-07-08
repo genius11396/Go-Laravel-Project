@@ -8,6 +8,7 @@ use App\Driver;
 use App\Division;
 use App\City;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class DriverController extends Controller
 {
@@ -100,7 +101,7 @@ class DriverController extends Controller
         $user=new User;
         $user->name=$request->name;
         $user->email=$request->email;
-        $user->password=$request->pwd;
+        $user->password=Hash::make($request->pwd);
         $user->save();
 
         $user->assignRole('driver');
