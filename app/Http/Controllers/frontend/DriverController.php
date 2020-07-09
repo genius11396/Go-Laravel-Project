@@ -43,26 +43,24 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-       // dd($driver->states);
-        
-        // $request->validate([
-        //     'name'=>'required|min:5|max:191',
-        //     'photo[]' => 'sometimes|mimes:jpeg,bmp,png',
-        //     'email' => 'required|min:5|max:191',
-        //     'password' => 'required|min:5|max:191'
-        // ]);
-
         $driverimageName = time().'.'.$request->driverphoto->extension();
         $request->driverphoto->move(public_path('images/driver'),$driverimageName);
-        $driverfilepath= 'images/driver'.$driverimageName;
+        $driverfilepath= 'images/driver/'.$driverimageName;
 
         $licenceimageName = time().'.'.$request->licencephoto->extension();
         $request->licencephoto->move(public_path('images/licence'),$licenceimageName);
-        $licencefilepath= 'images/licence'.$licenceimageName;
+        $licencefilepath= 'images/licence/'.$licenceimageName;
 
          $carimageName = time().'.'.$request->carphoto->extension();
         $request->carphoto->move(public_path('images/car'),$carimageName);
-        $carfilepath= 'images/car'.$carimageName;
+        $carfilepath= 'images/car/'.$carimageName;
+
+        $user=new User;
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->password=Hash::make($request->pwd);
+        $user->save();
+
 
         $driver=new Driver;
         $driver->name=$request->name;
@@ -88,6 +86,7 @@ class DriverController extends Controller
                 $driver->travelablecity=1;
             }  
         $driver->noofseats=$request->seat;
+        $driver->user_id=$user->id;
         $driver->save();
        
         $itemString=$request->division;
@@ -96,16 +95,11 @@ class DriverController extends Controller
 
 
        //  dd($driver);
-
-        $user=new User;
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $user->password=Hash::make($request->pwd);
-        $user->save();
-
         $user->assignRole('driver');
-        // return $user;
+
         
+        // return $user;
+        return view ('frontend.driver.policy');
      
     }
 

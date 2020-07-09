@@ -38,6 +38,7 @@ class OrderController extends Controller
         $order->pickup_time_am=$pickuptimeam;
         $order->price=$total;
         $order->cartype=$cartype;
+        $order->status=0;
         $order->save();
 	}
 	public function statusone($id)

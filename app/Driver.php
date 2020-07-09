@@ -17,7 +17,7 @@ class Driver extends Model
 
     // protected $guard = 'driver';
 
-    protected $fillable=['name','driverphoto','licencephoto','carphoto','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id'];
+    protected $fillable=['name','driverphoto','licencephoto','carphoto','phone','cartype','carno','cardetail','price','travelablecity','noofseats','busy','city_id','division_id','user_id'];
 
 
 
@@ -28,9 +28,9 @@ class Driver extends Model
 
      public function user()
      {
-     	return $this->hasOne('App\User');
-
+     	return $this->belongsTo('App\User');
      }
+
      public function order()
      {
         return $this->belongsTo('App\Order');

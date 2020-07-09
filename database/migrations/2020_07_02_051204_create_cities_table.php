@@ -19,6 +19,9 @@ class CreateCitiesTable extends Migration
             $table->unsignedBigInteger('division_id');
             $table->timestamps();
             $table->softDeletes();
+
+   
+
         });
     }
 

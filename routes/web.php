@@ -27,8 +27,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('searchresult','frontend\ResultController@resultpage')->name('result');
 
 
-Route::get('driverregister','frontend\DriverController@store')->name('driverregister');
-Route::get('driverregister','frontend\DriverController@store')->name('driverregister');
+Route::post('driverregister','frontend\DriverController@store')->name('driverregister');
+
 
 Route::get('driverform','frontend\DriverController@create')->name('driverform');
 Route::get('statusone\{id}','frontend\OrderController@statusone')->name('statusone');

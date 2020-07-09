@@ -97,10 +97,15 @@
 
 <div class="container-fluid">
   <div class="container">
+ 
+ {{Auth::user()->id}}
+ <br>
+ {{$drivername}}
             @foreach($orders as $order)
 
-              @if(auth()->user()->id==$order->driver_id)
-         
+
+             @if(auth()->user()->id==$order->driver_id)
+        
  <div class="outcard d-flex justify-content-center">
       <div class="card col-lg-9 col-md-12 col-sm-12">
         <div class="card-block">
