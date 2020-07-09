@@ -37,7 +37,6 @@
 					<button data-toggle="modal" data-target="#Order" class="btn btn-info" style="width: 100px;">Booking</button>
 
 
-	
 				</div>
 			</div>
 		</div>

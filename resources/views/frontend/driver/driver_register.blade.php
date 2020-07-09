@@ -13,7 +13,7 @@
       <div class="card-block " >
         
         <form action="{{route('driverregister')}}" method="POST" enctype="multipart/form-data">
-          @csrf 
+          {{csrf_field()}}
           <div class="row">
       	    <div class="form-group col-lg-6 col-md-6">
               <div class="p-3">
