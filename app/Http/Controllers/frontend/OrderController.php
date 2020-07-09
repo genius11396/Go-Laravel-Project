@@ -39,8 +39,42 @@ class OrderController extends Controller
         $order->price=$total;
         $order->cartype=$cartype;
         $order->save();
-		
-	
+	}
+	public function statusone($id)
+	{      
+		$order=Order::where('driver_id', $id)
+        ->update(['status' => 1]);
+     
+		$driver=Driver::where('id', $id)
+        ->update(['busy' => 1]);
+    
+         $orders=Order::where('status','=','0')->get();
+         return view('frontend.driver.index_order',compact('orders'));
+
+	}
+	public function yourorder()
+	{  
+         $orders=Order::where('status','=','1')->get();
+         return view('frontend.driver.your_order',compact('orders'));
+	}
+		public function statusoneone($id)
+	{      
+        $order=Order::find($id);
+        $order->status=1.1;
+       $order->save();
+
+         $orders=Order::where('status','=','1')->get();
+         return view('frontend.driver.your_order',compact('orders'));
+
+	}
+		public function cancle($id)
+	{      
+        $order=Order::find($id);
+        $order->status=2;
+       $order->save();
+
+         $orders=Order::where('status','=','0')->get();
+         return view('frontend.driver.your_order',compact('orders'));
 
 	}
 }

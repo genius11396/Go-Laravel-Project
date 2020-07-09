@@ -14,7 +14,7 @@ class DriverindexController extends Controller
      */
     public function index()
     {
-        $orders=Order::all();
+        $orders=Order::where('status','=','0')->get();
          return view('frontend.driver.index_order',compact('orders'));
     }
 
@@ -68,9 +68,9 @@ class DriverindexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+
     }
 
     /**

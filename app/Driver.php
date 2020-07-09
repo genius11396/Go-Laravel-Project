@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\City;
 use App\User;
 use App\Division;
+use App\Order;
+
 
 
 class Driver extends Model
@@ -27,6 +29,11 @@ class Driver extends Model
      public function user()
      {
      	return $this->hasOne('App\User');
+
+     }
+     public function order()
+     {
+        return $this->belongsTo('App\Order');
 
      }
 

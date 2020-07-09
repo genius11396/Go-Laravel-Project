@@ -31,15 +31,21 @@ Route::get('driverregister','frontend\DriverController@store')->name('driverregi
 Route::get('driverregister','frontend\DriverController@store')->name('driverregister');
 
 Route::get('driverform','frontend\DriverController@create')->name('driverform');
+Route::get('statusone\{id}','frontend\OrderController@statusone')->name('statusone');
+Route::get('statusoneone\{id}','frontend\OrderController@statusoneone')->name('statusoneone');
+Route::get('cancle\{id}','frontend\OrderController@cancle')->name('cancle');
+Route::get('yourorder','frontend\OrderController@yourorder')->name('yourorder');
 Route::get('indexdriver','frontend\DriverController@index')->name('indexdriver');
-
+Route::get('notification','frontend\CustomerController@notification')->name('notification');
+Route::get('customeryour_order','frontend\CustomerController@customeryour_order')->name('customeryour_order');
+Route::get('customerdone\{id}','frontend\CustomerController@customerdone')->name('customerdone');
 Route::get('policy','frontend\DriverController@policy')->name('policy');
 
 
 Route::post('citybydivision','frontend\DriverController@citybydivision')->name('citybydivision');
 Route::resource('driverindex','frontend\DriverindexController');
 
-
+//statusone(comfirm) statusoneone(done)
 //------------------
 
 // NPS

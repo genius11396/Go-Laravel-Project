@@ -22,7 +22,7 @@
           <button class="btn btn-info">Pending Lists</button>
         </a>
 
-        <a href="{{route('yourorder')}}">
+        <a href="">
           <button class="btn btn-info m-2">Your Orders</button>
         </a>
 
@@ -128,8 +128,8 @@
            
             
             <!--  <button class="btn btn-primary m-1 rounded" style="height: 40px">Accept</button> -->
-              <a href="{{route('cancle',$order->id)}}" onclick="return confirm('are you sure to reject?')" class="btn btn-danger m-1 rounded " style="height: 40px;">Cancle</a>
-                 <a href="{{route('statusone',$order->driver_id)}}" class="btn btn-info m-1 rounded " style="height: 40px;">Accept</a>
+             
+                 <a href="{{route('statusoneone',$order->id)}}" class="btn btn-info m-1 rounded " style="height: 40px;">Done</a>
 
            </div>
 

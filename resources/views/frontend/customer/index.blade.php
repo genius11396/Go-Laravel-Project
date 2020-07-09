@@ -1,4 +1,3 @@
- 
 @extends('frontend.customer.master')
 
 @section('content')
@@ -211,8 +210,9 @@ $("#division").change(function(){
     }
   });
   $.post("/fetch",{id:id},function(res){
+    console.log(res);
     var html='';
-    jQuery.each(JSON.parse(res), function (key, value) {
+    jQuery.each(res, function (key, value) {
       // console.log(value.name);
       html+=`<option value="${value.id}">${value.name}</option>`
       $("#city").html(html);
@@ -231,7 +231,7 @@ $("#dropoffdivision").change(function(){
   });
   $.post("/dropfetch",{id:id},function(res){
     var html='';
-    jQuery.each(JSON.parse(res), function (key, value) {
+    jQuery.each(res, function (key, value) {
       // console.log(value.name);
       html+=`<option value="${value.id}">${value.name}</option>`
       $("#dropoffcity").html(html);

@@ -47,6 +47,19 @@
             </a>
             </div>
 
+      <a href="{{route('notification')}}">
+          <button class="btn btn-info"><i class="fas fa-bell"></i></button>
+        </a>
+
+        <a href="{{route('customeryour_order')}}">
+          <button class="btn btn-info m-2">Your Orders</button>
+        </a>
+
+        <a href="{{route('policy')}}">
+          <button class="btn btn-info m-2">Policy</button>
+        </a>
+
+
     @role('customer')
     <ul class="p-3">
         <!-- Authentication Links -->

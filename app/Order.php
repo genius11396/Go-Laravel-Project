@@ -5,6 +5,8 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\User;
+use App\Driver;
+
 
 class Order extends Model
 {
@@ -16,5 +18,8 @@ class Order extends Model
      {
      	return $this->hasOne('App\User');
      }
-
+   public function driver()
+     {
+     	return $this->hasOne('App\Driver');
+     }
 }

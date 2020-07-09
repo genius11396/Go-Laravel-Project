@@ -27,7 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('pickup_time_am');
             $table->integer('price');
             $table->string('cartype');
-            $table->integer('status');
+            $table->string('status');
             $table->timestamps();
             $table->softDeletes();
 

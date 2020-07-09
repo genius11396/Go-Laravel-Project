@@ -7,6 +7,8 @@ use App\City;
 use App\Division;
 use DB;
 use App\Driver;
+use App\Order;
+
 use DateTime;
 class CustomerController extends Controller
 { 
@@ -24,27 +26,22 @@ class CustomerController extends Controller
     public function fetch(Request $request)
     {
      $id=$request->id;
-     $city= City::where('division_id', $id)->get();
-     echo $city;
+     $city= City::where('division_id',$id)->get();
+     return $city;
    }
     public function details($id)
     {   
        $driver=Driver::find($id);
         $driverhomedivision=Division::find($id);
       return view('frontend.customer.search_detail',compact('driver','driverhomedivision'));
-
     }
 
    public function dropfetch(Request $request)
    {
      $id=$request->id;
-     $city= City::where('division_id', $id)->get();
-     echo $city;
+     $city= City::where('division_id',$id)->get();
+     return $city;
    }
-
-
-
-
    public function searchdriver(Request $request)
    { 
      $pickupdivision=$request->pickupdivision;
@@ -55,14 +52,7 @@ class CustomerController extends Controller
      $dropdate=$request->dropdate;
          $pickuptime=$request->pickuptime;
              $pickuptimeam=$request->pickuptimeam;
-            
-
-
-
      $userorderdetails=[$pickupdivision,$pickupcity,$dropoffdivision,$dropoffcity,$pickupdate,$dropdate,$pickuptime,$pickuptimeam];
-
-
-
      $drivers= Driver::all();
      $driv=$drivers->where('busy','=',0);
      foreach ($driv as $driver ){
@@ -85,16 +75,33 @@ class CustomerController extends Controller
        $pickupdate = strtotime($pickupdate);
        $interva= ($dropdate - $pickupdate)/60/60/24;
        $interval=1+$interva;
-     
-
  return view('frontend.customer.search_result',compact('samedivision','usersdriver','interval','userorderdetails'));
-
-
-
-
-
      }
    }
+
+      public function notification()
+  {      
+        $orders=Order::all();
+      
+         return view('frontend.customer.notification',compact('orders'));
+
+  }
+  
+      public function customeryour_order()
+  {      
+        $orders=Order::where('status','=','1')->get();
+      
+         return view('frontend.customer.customeryour_order',compact('orders'));
+
+  }
+      public function customerdone($id)
+  {      
+        $orders=Order::find($id);
+      $orders->status=1.1;
+      $orders->save();
+         return view('frontend.customer.customeryour_order',compact('orders'));
+
+  }
  }
 
 
