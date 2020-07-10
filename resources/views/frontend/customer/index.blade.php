@@ -3,6 +3,21 @@
 @section('content')
 <div id="img" style="background-image: url('{{asset('frontendtemplate/images/car.jpeg')}}');">
   <div class="container-fluid">
+@if (Session::has('accepted'))
+  <div style="z-index: 10;position: absolute; bottom: 20px;right: 20px;" class="alert alert-danger alert-dismissible fade show" role="alert">
+  Your order to <strong>driver name</strong> was reject. Try again
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+
+
+ 
+
+
+
+
     <div class="container py-5 d-flex justify-content-end">
       <div class="card col-lg-6 col-md-10 col-sm-10">
         <div class="card-block">

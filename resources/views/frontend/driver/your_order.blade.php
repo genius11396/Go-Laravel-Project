@@ -99,8 +99,9 @@
   <div class="container">
             @foreach($orders as $order)
 
-              @if(auth()->user()->id==$order->driver_id)
+
          
+
  <div class="outcard d-flex justify-content-center">
       <div class="card col-lg-9 col-md-12 col-sm-12">
         <div class="card-block">
@@ -152,19 +153,8 @@
         </div>
       </div>
     </div>
-            @else
-         <p class="text-center pt-5" style="font-size: 28px;">You have no orders yets</p>
-             @endif
+      
               @endforeach
-           
-
-          
-         
-         
-
-
-
-
   </div>
 </div>
 

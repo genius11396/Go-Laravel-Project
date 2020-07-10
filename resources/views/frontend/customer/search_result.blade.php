@@ -3,13 +3,9 @@
 
 	<div class="mt-5 mb-3 text-center">
 		<img src="{{asset('frontendtemplate/images/icon3.svg')}}" class="img-fluid card-img" style="width: 60px;"><h2>Car Search List</h2>
-		<!-- <div style="padding-left: 250px;padding-right: 250px;"><hr></div> -->
 	</div>
-
-
 	<div class="container pb-5 ">
 		{{--		foreach   --}}
-
 
 	@if(sizeof($usersdriver)>0)
 	@foreach($usersdriver as $sameone)
@@ -21,7 +17,6 @@
 			<div class="col-lg-2 col-md-4 col-sm-4">
 				<div class="text-center">
 					<i class="fas fa-user-alt" id="icon"></i>
-					<!-- <i class="fas fa-car" id="icon"></i> -->
 					<p>{{$sameone->name}}</p>
 				</div>
 			</div>
@@ -165,9 +160,9 @@
 
 		</div>
 	</div>
-	@endsection
+	
 
-	@section('script')
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.cardetail').hide();
@@ -215,3 +210,4 @@
 		});
 	</script>
 	@endsection
+

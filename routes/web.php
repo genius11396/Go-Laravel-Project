@@ -32,6 +32,7 @@ Route::post('driverregister','frontend\DriverController@store')->name('driverreg
 
 Route::get('driverform','frontend\DriverController@create')->name('driverform');
 Route::get('statusone\{id}','frontend\OrderController@statusone')->name('statusone');
+
 Route::get('statusoneone\{id}','frontend\OrderController@statusoneone')->name('statusoneone');
 Route::get('cancle\{id}','frontend\OrderController@cancle')->name('cancle');
 Route::get('yourorder','frontend\OrderController@yourorder')->name('yourorder');

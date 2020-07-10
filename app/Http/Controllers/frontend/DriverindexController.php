@@ -5,7 +5,9 @@ namespace App\Http\Controllers\frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
-use DB;
+use Auth;
+use App\Driver;
+
 class DriverindexController extends Controller
 {
     /**
@@ -15,16 +17,17 @@ class DriverindexController extends Controller
      */
     public function index()
     {
-        $orders=Order::where('status','=',0)->get();
+         $aid=Auth::user()->id;
+    
+        $driver=Driver::where('user_id',$aid)
+        ->select('id')
+        ->first();
+        $driverid=$driver->id;
+        $orders=Order::where('status','=',0)
+          ->where('driver_id',$driverid)
+          ->get();
 
- $drivername=DB::table('orders')
-            ->join('drivers', 'orders.driver_id', '=', 'drivers.id')
-            ->select('drivers.name as dname')
-            ->get();
-        
-
-
-         return view('frontend.driver.index_order',compact('orders','drivername'));
+         return view('frontend.driver.index_order',compact('orders'));
     }
 
     /**

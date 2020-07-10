@@ -98,13 +98,11 @@
 <div class="container-fluid">
   <div class="container">
  
- {{Auth::user()->id}}
- <br>
- {{$drivername}}
+
             @foreach($orders as $order)
+  
 
-
-             @if(auth()->user()->id==$order->driver_id)
+      
         
  <div class="outcard d-flex justify-content-center">
       <div class="card col-lg-9 col-md-12 col-sm-12">
@@ -122,9 +120,9 @@
               <p >Price</p>
             </div>
 
-
+ 
   <div class="col-lg-4 col-md-3 col-sm-5 pl-sm-4  pl-1 bg-light">
-              <p ><i class="fas fa-caret-right"></i>{{$order->user_id}}</p>
+              <p ><i class="fas fa-caret-right"></i>{{$order->user->name}}</p>
               <p ><i class="fas fa-caret-right"></i>{{$order->pickup_division}} \ {{$order->pickup_city}} </p>
               <p ><i class="fas fa-caret-right"></i>{{$order->dropoff_city}} \ {{$order->dropoff_division}}</p>
               <p ><i class="fas fa-caret-right"></i>{{$order->price}}</p>
@@ -134,7 +132,7 @@
             
             <!--  <button class="btn btn-primary m-1 rounded" style="height: 40px">Accept</button> -->
               <a href="{{route('cancle',$order->id)}}" onclick="return confirm('are you sure to reject?')" class="btn btn-danger m-1 rounded " style="height: 40px;">Cancle</a>
-                 <a href="{{route('statusone',$order->driver_id)}}" class="btn btn-info m-1 rounded " style="height: 40px;">Accept</a>
+              <a href="{{route('statusone',$order->id)}}" class="btn btn-info m-1 rounded"  style="height: 40px;">Accept </a>
 
            </div>
 
@@ -157,9 +155,7 @@
         </div>
       </div>
     </div>
-            @else
-         <p class="text-center pt-5" style="font-size: 28px;">You have no orders yets</p>
-             @endif
+     
               @endforeach
            
 
@@ -172,6 +168,7 @@
 
   </div>
 </div>
+
 
 @endsection
 
