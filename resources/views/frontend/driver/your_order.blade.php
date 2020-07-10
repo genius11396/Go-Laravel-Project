@@ -120,7 +120,7 @@
 
 
   <div class="col-lg-4 col-md-3 col-sm-5 pl-sm-4  pl-1 bg-light">
-              <p ><i class="fas fa-caret-right"></i>{{$order->user_id}}</p>
+              <p ><i class="fas fa-caret-right"></i>{{$order->user->name}}</p>
               <p ><i class="fas fa-caret-right"></i>{{$order->pickup_division}} \ {{$order->pickup_city}} </p>
               <p ><i class="fas fa-caret-right"></i>{{$order->dropoff_city}} \ {{$order->dropoff_division}}</p>
               <p ><i class="fas fa-caret-right"></i>{{$order->price}}</p>
@@ -142,7 +142,7 @@
             </div>
             <div class="col-lg-4 col-md-4 pr-5 col-sm-5 bg-light hideclass">
               <p><i class="fas fa-caret-right"></i>{{$order->pickup_date}}</p>
-              <p><i class="fas fa-caret-right"></i>{{$order->pick_time}} \ {{$order->pickup_time_am}}</p>
+              <p><i class="fas fa-caret-right"></i>{{$order->pickup_time}} \ {{$order->pickup_time_am}}</p>
               <p><i class="fas fa-caret-right"></i>{{$order->dropoff_date}}</p>
             </div>
 

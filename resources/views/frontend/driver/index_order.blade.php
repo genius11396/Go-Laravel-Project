@@ -144,7 +144,7 @@
             </div>
             <div class="col-lg-4 col-md-4 pr-5 col-sm-5 bg-light hideclass">
               <p><i class="fas fa-caret-right"></i>{{$order->pickup_date}}</p>
-              <p><i class="fas fa-caret-right"></i>{{$order->pick_time}} \ {{$order->pickup_time_am}}</p>
+              <p><i class="fas fa-caret-right"></i>{{$order->pickup_time}} - {{$order->pickup_time_am}}</p>
               <p><i class="fas fa-caret-right"></i>{{$order->dropoff_date}}</p>
             </div>
 

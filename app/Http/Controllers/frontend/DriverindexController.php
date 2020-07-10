@@ -27,6 +27,12 @@ class DriverindexController extends Controller
           ->where('driver_id',$driverid)
           ->get();
 
+        // $divisions = DB::table('orders')
+        //     ->join('divisions', 'orders.pickup_division', '=', 'divisions.id')
+        //      ->join('cities', 'orders.pickup_city', '=', 'cities.id')
+        //     ->select('divisions.name as divisionname', 'cities.name as cityname', 'orders.price')
+        //     ->get();
+
          return view('frontend.driver.index_order',compact('orders'));
     }
 
